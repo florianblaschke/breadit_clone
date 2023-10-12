@@ -40,7 +40,6 @@ export const authOptions: NextAuthOptions = {
         token.id = user!.id;
         return token;
       }
-
       if (!dbUser.username) {
         await db.user.update({
           where: {
