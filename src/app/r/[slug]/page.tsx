@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from "@/config";
 import { notFound } from "next/navigation";
 import MiniCreatePost from "@/components/MiniCreatePost";
+import PostFeed from "@/components/PostFeed";
 
 interface PageProps {
   params: {
@@ -21,7 +22,7 @@ export default async function SubredditPage({ params }: PageProps) {
           author: true,
           votes: true,
           comments: true,
-          Subreddit: true,
+          subreddit: true,
         },
         take: INFINITE_SCROLLING_PAGINATION_RESULTS,
       },
@@ -36,6 +37,7 @@ export default async function SubredditPage({ params }: PageProps) {
         r/ {subreddit.name}
       </h1>
       <MiniCreatePost session={session} />
+      <PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} />
     </>
   );
 }
