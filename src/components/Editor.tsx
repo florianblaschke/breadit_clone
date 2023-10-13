@@ -6,13 +6,12 @@ import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import TextareaAutoSize from "react-textarea-autosize";
-import { z } from "zod";
 
-import { toast } from "./ui/use-toast";
-import { uploadFiles } from "@/lib/validators/uploadthing";
 import { PostCreationRequest, PostValidator } from "@/lib/validators/post";
+import { uploadFiles } from "@/lib/validators/uploadthing";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { toast } from "./ui/use-toast";
 
 export default function Editor({ subredditId }: { subredditId: string }) {
   const {

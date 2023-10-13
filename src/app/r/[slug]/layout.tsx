@@ -1,12 +1,11 @@
+import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
+import { buttonVariants } from "@/components/ui/Button";
+import { INFINITE_SCROLL_PAGINATION_RESULTS } from "@/config";
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { INFINITE_SCROLL_PAGINATION_RESULTS } from "@/config";
-import { notFound } from "next/navigation";
 import { format } from "date-fns";
-import { Divide } from "lucide-react";
-import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/Button";
+import { notFound } from "next/navigation";
 
 export default async function LayoutSlug({
   children,
