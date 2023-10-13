@@ -1,7 +1,6 @@
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { PostValidator } from "@/lib/validators/post";
-import { SubredditSubscriptionValidator } from "@/lib/validators/subreddit";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
